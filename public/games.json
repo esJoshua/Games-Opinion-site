@@ -1,0 +1,44 @@
+[
+    {
+        "name": "Grand Theft Auto V",
+        "rating": 4.48,
+        "released": "2013-09-17",
+        "updated": "2020-09-23",
+        "background_image": "https://cdn.forbes.com.mx/2020/05/Grand-Theft-Auto-V-640x360.jpg"
+    },
+    {
+        "name": "Portal 2",
+        "rating": 4.62,
+        "released": "2011-04-18",
+        "updated": "2020-08-03",
+        "background_image": "https://pivigames.blog/wp-content/uploads/2018/07/portal-2-mac-2844-0-min.jpg"
+    },
+    {
+        "name": "God of War",
+        "rating": 4.8,
+        "released": "2018-04-20",
+        "updated": "2020-09-23",
+        "background_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqFKu0Inb2pwHjNoL_8rCvARIDbaZrhml_jQ&usqp=CAU"
+    },
+    {
+        "name": "The Last of Us 2",
+        "rating": 4.93,
+        "released": "2020-06-19",
+        "updated": "2020-08-03",
+        "background_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqu37yXqMNAbAEGv0BMZWBZiKHUKwfBczepA&usqp=CAU"
+    },
+    {
+        "name": "Call of Duty: Warzone",
+        "rating": 4.7,
+        "released": "2020-11-12",
+        "updated": "2020-09-23",
+        "background_image": "https://www.latercera.com/resizer/5XQU53Hv8rsnbR5A8LauSVryTpc=/380x570/smart/arc-anglerfish-arc2-prod-copesa.s3.amazonaws.com/public/B5VJ64RGJNGG3C3ALZ6PI6PUOQ.jpg"
+    },
+    {
+        "name": "Killzone: Shadow Fall",
+        "rating": 4.8,
+        "released": "2013-11-29",
+        "updated": "2020-08-03",
+        "background_image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsGbFEvcRhygksIShd-rq6a-6A_Lpb010lmg&usqp=CAU"
+    }
+]

@@ -1,18 +1,30 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+  <div>
+    <h1 class="text-center mt-5">
+      <strong>{{ title }}</strong>
+    </h1>
+    <Card :gamesProps="gameList" />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import Card from "@/components/CardGame.vue";
+import { mapState } from "vuex";
 
 export default {
   name: "HomeView",
+  data() {
+    return {
+      title: "Lista de Juegos Disponibles",
+    };
+  },
+  computed: {
+    ...mapState(["gameList"]),
+  },
   components: {
-    HelloWorld,
+    Card,
   },
 };
 </script>
+
+<style></style>
