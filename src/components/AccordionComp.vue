@@ -9,8 +9,11 @@
           :data-bs-target="`#opinion-${i + 1}`"
           aria-expanded="true"
         >
-          Opinión creada por: {{ opinion.nombre }}. Para el juego:
-          {{ opinion.juego }}
+          <span class="mx-2"
+            >Opinión creada por: <strong>{{ opinion.name }}.</strong></span
+          >
+          Para el juego:
+          <strong class="mx-1"> {{ opinion.gameTitle }}.</strong>
         </button>
       </h2>
       <div
@@ -18,7 +21,7 @@
         class="accordion-collapse collapse"
         data-bs-parent="OpinionAccordion"
       >
-        <div class="accordion-body">
+        <div class="accordion-body mx-5">
           <strong>Opinión:</strong> {{ opinion.opinion }}
         </div>
       </div>

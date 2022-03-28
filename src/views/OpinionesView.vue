@@ -3,10 +3,10 @@
     <h1 class="text-center mt-5">
       <strong>{{ title }}</strong>
     </h1>
-    <Accordion :opinionProps="opiniones" v-if="opiniones.length" />
+    <Accordion class="mt-5" :opinionProps="opiniones" v-if="opiniones.length" />
     <div v-else>
       <div class="bg-danger bg-opacity-25 py-4 mt-5 fs-3 container">
-        <p class="m-0">No existen opiniones por administrar.</p>
+        <p class="m-0">No existen opiniones por mostrar.</p>
       </div>
     </div>
   </div>

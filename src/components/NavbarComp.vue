@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <div class="container-fluid">
         <router-link class="navbar-brand" to="/"
-          ><i class="fas fa-headset mx-1"></i>Games Opinion</router-link
+          ><i class="fas fa-headset mx-2"></i>Games Opinion</router-link
         >
         <button
           class="navbar-toggler"

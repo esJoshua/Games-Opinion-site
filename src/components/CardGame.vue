@@ -37,7 +37,6 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
 import ModalComp from "../components/ModalComp.vue";
 export default {
   name: "CardGame",
@@ -52,9 +51,6 @@ export default {
       type: Array,
       default: () => [],
     },
-  },
-  computed: {
-    ...mapState(["gameList"]),
   },
   methods: {
     loadTitle(gameName) {

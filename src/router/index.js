@@ -19,13 +19,11 @@ const routes = [
     path: "/administracion",
     name: "Administracion",
     component: () => import("../views/AdminView.vue"),
-    children: [
-      {
-        path: "editar",
-        name: "Editar",
-        component: () => import("../views/EditarView.vue"),
-      },
-    ],
+  },
+  {
+    path: "/editar",
+    name: "Editar",
+    component: () => import("../views/EditarView.vue"),
   },
   {
     path: "*",

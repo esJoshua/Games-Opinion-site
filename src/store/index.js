@@ -9,15 +9,25 @@ export default new Vuex.Store({
     gameList: [],
     opiniones: [],
   },
-  getters: {},
+  getters: {
+    getOpinion: (state) => (payload) => {
+      console.log(state.opiniones[payload]);
+      console.log(state.opiniones);
+      return state.opiniones[payload];
+    },
+  },
   mutations: {
     SET_DATA(state, payload) {
       state.gameList = payload;
-      console.log(payload);
+      /* console.log(payload); */
     },
-    SET_OPINION(state, payload) {
+    PUSH_OPINION(state, payload) {
       state.opiniones.push(payload);
-      console.log(payload);
+      /* console.log(payload); */
+    },
+    DELETE_OPINION(state, payload) {
+      state.opiniones.splice(payload, 1);
+      /* console.log(payload); */
     },
   },
   actions: {

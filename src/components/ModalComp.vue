@@ -44,6 +44,7 @@
             type="button"
             class="btn btn-secondary"
             data-bs-dismiss="modal"
+            @click="reset"
           >
             Cerrar
           </button>
@@ -78,15 +79,19 @@ export default {
     },
   },
   methods: {
-    ...mapMutations(["SET_OPINION"]),
+    ...mapMutations(["PUSH_OPINION"]),
     saveOpinion() {
       const opinion = {
-        juego: this.gameTitleProps,
-        nombre: this.nombreVmodel,
+        gameTitle: this.gameTitleProps,
+        name: this.nombreVmodel,
         opinion: this.opinionVmodel,
       };
-      this.SET_OPINION(opinion);
-      alert("Opinión enviada...");
+      this.PUSH_OPINION(opinion);
+      alert("Opinión enviada con éxito...");
+      this.nombreVmodel = "";
+      this.opinionVmodel = "";
+    },
+    reset() {
       this.nombreVmodel = "";
       this.opinionVmodel = "";
     },
