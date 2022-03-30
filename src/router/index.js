@@ -21,9 +21,10 @@ const routes = [
     component: () => import("../views/AdminView.vue"),
   },
   {
-    path: "/editar",
+    path: "/administracion/editar/:indexProps",
     name: "Editar",
     component: () => import("../views/EditarView.vue"),
+    props: true,
   },
   {
     path: "*",

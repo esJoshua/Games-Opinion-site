@@ -2,29 +2,25 @@
   <div class="container">
     <div class="row">
       <h1 class="text-center mt-5">
-        <strong>{{ title }}</strong>
+        <strong>{{ title }}{{ opinion.gameTitle }}</strong>
       </h1>
     </div>
     <form class="row">
       <div class="mb-3">
-        <label for="exampleFormControlInput1" class="form-label"
-          >Nombre:
-        </label>
+        <label class="form-label">Nombre: </label>
         <input
           type="text"
           class="form-control"
-          id="nombreEdit"
           placeholder="Tu nombre debe ir aquí..."
-          :v-model="nombreVmodel"
+          v-model="opinion.name"
         />
       </div>
       <div class="mb-3">
-        <label for="message-text" class="form-label">Opiniones:</label>
+        <label class="form-label">Opiniones:</label>
         <textarea
           class="form-control"
-          id="opinionesEdit"
           placeholder="Tu opinión debe ir aquí..."
-          v-model="opinionVmodel"
+          v-model="opinion.opinion"
           rows="3"
         ></textarea>
       </div>
@@ -34,25 +30,44 @@
             Regresar
           </button></router-link
         >
-        <button type="button" class="btn btn-info mx-2">Guardar</button>
+        <router-link to="/administracion"
+          ><button @click="saveOpinion" type="button" class="btn btn-info mx-2">
+            Guardar
+          </button></router-link
+        >
       </div>
     </form>
   </div>
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapGetters } from "vuex";
 export default {
   name: "EditarView",
   data() {
     return {
       title: "Editando la Lista opinión de: ",
-      nombreVmodel: "",
-      opinionVmodel: "",
+      index: this.$route.params.indexProps,
     };
+  },
+  props: {
+    indexProps: {
+      type: Number,
+      default: () => 0,
+    },
   },
   computed: {
     ...mapState(["opiniones"]),
+    ...mapGetters(["getOpinion"]),
+
+    opinion() {
+      return this.getOpinion(this.index);
+    },
+  },
+  methods: {
+    saveOpinion() {
+      alert("Opinión editada con éxito...");
+    },
   },
 };
 </script>

@@ -31,7 +31,7 @@
               </button>
             </td>
             <td>
-              <router-link to="/editar"
+              <router-link :to="{ name: 'Editar', params: { indexProps: i } }"
                 ><button
                   type="button"
                   class="btn btn-primary"
@@ -69,9 +69,9 @@ export default {
   },
   methods: {
     ...mapMutations(["DELETE_OPINION"]),
-    editGame(id) {
-      this.gameOpinionId = id;
-      console.log(this.gameOpinionId);
+    editGame(index) {
+      this.gameOpinionId = index;
+      /*  console.log(this.gameOpinionId); */
       this.getOpinion(this.gameOpinionId);
     },
   },
