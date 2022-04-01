@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <h1 class="text-center mt-5">
-        <strong>{{ title }}{{ opinion.gameTitle }}</strong>
+        <strong>{{ title }}{{ opinionToEdit.gameTitle }}</strong>
       </h1>
     </div>
     <form class="row">
@@ -12,7 +12,7 @@
           type="text"
           class="form-control"
           placeholder="Tu nombre debe ir aquí..."
-          v-model="opinion.name"
+          v-model="name"
         />
       </div>
       <div class="mb-3">
@@ -20,7 +20,7 @@
         <textarea
           class="form-control"
           placeholder="Tu opinión debe ir aquí..."
-          v-model="opinion.opinion"
+          v-model="opinion"
           rows="3"
         ></textarea>
       </div>
@@ -31,7 +31,7 @@
           </button></router-link
         >
         <router-link to="/administracion"
-          ><button @click="saveOpinion" type="button" class="btn btn-info mx-2">
+          ><button @click="editOpinion" type="button" class="btn btn-info mx-2">
             Guardar
           </button></router-link
         >
@@ -48,6 +48,10 @@ export default {
     return {
       title: "Editando la Lista opinión de: ",
       index: this.$route.params.indexProps,
+      opinionlocal: {
+        name: "",
+        opinion: "",
+      },
     };
   },
   props: {
@@ -59,13 +63,45 @@ export default {
   computed: {
     ...mapState(["opiniones"]),
     ...mapGetters(["getOpinion"]),
+    name: {
+      get() {
+        return this.opinionToEdit.name;
+      },
+      set(value) {
+        console.log(value);
+        this.opinionlocal.name = value;
+      },
+    },
+    opinion: {
+      get() {
+        return this.opinionToEdit.opinion;
+      },
+      set(value) {
+        this.opinionlocal.opinion = value;
+      },
+    },
 
-    opinion() {
+    opinionToEdit() {
       return this.getOpinion(this.index);
     },
   },
   methods: {
-    saveOpinion() {
+    editOpinion() {
+      //console.log(this.name);
+      //console.log(this.opinion);
+      //console.log(this.opinionlocal.name);
+      //console.log(this.opinionlocal.opinion);
+      //console.log(this.opinionToEdit);
+      this.$set(
+        this.opinionToEdit,
+        "name",
+        this.opinionlocal.name || this.name
+      );
+      this.$set(
+        this.opinionToEdit,
+        "opinion",
+        this.opinionlocal.opinion || this.opinion
+      );
       alert("Opinión editada con éxito...");
     },
   },

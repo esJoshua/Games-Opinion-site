@@ -81,15 +81,18 @@ export default {
   methods: {
     ...mapMutations(["PUSH_OPINION"]),
     saveOpinion() {
-      const opinion = {
-        gameTitle: this.gameTitleProps,
-        name: this.nombreVmodel,
-        opinion: this.opinionVmodel,
-      };
-      this.PUSH_OPINION(opinion);
-      alert("Opinión enviada con éxito...");
-      this.nombreVmodel = "";
-      this.opinionVmodel = "";
+      if (!this.nombreVmodel || !this.opinionVmodel)
+        alert("Todos los campos son requeridos");
+      else {
+        const opinion = {
+          gameTitle: this.gameTitleProps,
+          name: this.nombreVmodel,
+          opinion: this.opinionVmodel,
+        };
+        this.PUSH_OPINION(opinion);
+        alert("Opinión enviada con éxito...");
+        this.reset();
+      }
     },
     reset() {
       this.nombreVmodel = "";
