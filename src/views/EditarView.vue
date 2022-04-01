@@ -68,7 +68,7 @@ export default {
         return this.opinionToEdit.name;
       },
       set(value) {
-        console.log(value);
+        //console.log(value);
         this.opinionlocal.name = value;
       },
     },

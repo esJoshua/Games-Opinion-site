@@ -11,7 +11,7 @@ export default new Vuex.Store({
   },
   getters: {
     getOpinion: (state) => (payload) => {
-      console.log(state.opiniones[payload]);
+      //console.log(state.opiniones[payload]);
       // console.log(state.opiniones);
       return state.opiniones[payload];
     },
