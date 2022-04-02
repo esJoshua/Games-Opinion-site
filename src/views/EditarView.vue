@@ -87,7 +87,7 @@ export default {
     },
   },
   methods: {
-    ...mapMutations(["OPINION_UPDATE"]),
+    ...mapMutations(["UPDATE_OPINION"]),
     editOpinion() {
       this.UPDATE_OPINION(this.editedOpinion);
       alert("Opinión editada con éxito...");
