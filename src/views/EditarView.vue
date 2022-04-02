@@ -41,16 +41,17 @@
 </template>
 
 <script>
-import { mapState, mapGetters } from "vuex";
+import { mapState, mapGetters, mapMutations } from "vuex";
 export default {
   name: "EditarView",
   data() {
     return {
       title: "Editando la Lista opinión de: ",
       index: this.$route.params.indexProps,
-      opinionlocal: {
+      editedOpinion: {
         name: "",
         opinion: "",
+        index: this.indexProps,
       },
     };
   },
@@ -69,7 +70,7 @@ export default {
       },
       set(value) {
         //console.log(value);
-        this.opinionlocal.name = value;
+        this.editedOpinion.name = value;
       },
     },
     opinion: {
@@ -77,33 +78,33 @@ export default {
         return this.opinionToEdit.opinion;
       },
       set(value) {
-        this.opinionlocal.opinion = value;
+        this.editedOpinion.opinion = value;
       },
     },
 
     opinionToEdit() {
-      return this.getOpinion(this.index);
+      return this.getOpinion(this.indexProps);
     },
   },
   methods: {
+    ...mapMutations(["OPINION_UPDATE"]),
     editOpinion() {
-      //console.log(this.name);
-      //console.log(this.opinion);
-      //console.log(this.opinionlocal.name);
-      //console.log(this.opinionlocal.opinion);
-      //console.log(this.opinionToEdit);
-      this.$set(
+      this.UPDATE_OPINION(this.editedOpinion);
+      alert("Opinión editada con éxito...");
+    },
+    /* editOpinion() {
+        this.$set(
         this.opinionToEdit,
         "name",
-        this.opinionlocal.name || this.name
+        this.editedOpinion.name || this.name
       );
       this.$set(
         this.opinionToEdit,
         "opinion",
-        this.opinionlocal.opinion || this.opinion
+        this.editedOpinion.opinion || this.opinion
       );
       alert("Opinión editada con éxito...");
-    },
+    }, */
   },
 };
 </script>

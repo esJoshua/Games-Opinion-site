@@ -13,7 +13,6 @@ export default new Vuex.Store({
   getters: {
     getOpinion: (state) => (payload) => {
       //console.log(state.opiniones[payload]);
-      // console.log(state.opiniones);
       return state.opiniones[payload];
     },
   },
@@ -29,6 +28,12 @@ export default new Vuex.Store({
     DELETE_OPINION(state, payload) {
       state.opiniones.splice(payload, 1);
       /* console.log(payload); */
+    },
+    UPDATE_OPINION(state, payload) {
+      state.opiniones[payload.index].name =
+        payload.name || state.opiniones[payload.index].name;
+      state.opiniones[payload.index].opinion =
+        payload.opinion || state.opiniones[payload.index].opinion;
     },
   },
   actions: {
