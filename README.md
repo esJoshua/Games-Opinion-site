@@ -1,4 +1,5 @@
 # games_opinion_site
+https://game-opinion-site.netlify.app/
 
 ## Project setup
 ```
